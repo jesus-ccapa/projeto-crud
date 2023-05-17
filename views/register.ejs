@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <%- include('partials/head.ejs') %> 
+</head>
+<body>
+  
+
+  <div class="container">
+
+    <h1><%= title %></h1>
+
+    <%- include('partials/navbar.ejs') %>
+    <div class="row">
+      <div class="col-md-6 offset-md-3 mt-5">
+        <h2 class="mb-4">Registro de usuario</h2>
+        <form action="/register/add" method="POST">
+          <div class="mb-3">
+            <label for="name" class="form-label">Usuario</label>
+            <input class="form-control" type="text" name="name" placeholder="Escriba su nombre:">
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">Id</label>
+            <input class="form-control" type="text" name="age" placeholder="Digite sua id:">
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo electrónico">
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" name="password" placeholder="Ingrese su contraseña">
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary">Registrarse</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+  <h4>
+    <% if (typeof message !== 'undefined') { %>
+      <%= message %>
+    <% } %>
+  </h4>
+
+  <%- include('partials/foot.ejs') %> 
+</body>
+</html>
